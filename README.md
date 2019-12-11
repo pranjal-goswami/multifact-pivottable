@@ -10,7 +10,7 @@ Multifact-pivottable is available under an MIT license from [NPM](https://www.np
 
 ## Where can I see the demo?
 
-You can see the live demo at [examples page](http://pranjal-goswami.in/multifact-pivottable/examples/index.html).
+You can see the live demo at [examples page](http://pranjalgoswami.in/multifact-pivottable/examples/index.html).
 
 ## How can I get started?
 
