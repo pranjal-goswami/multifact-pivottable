@@ -1,0 +1,111 @@
+Student Name,Gender,Maths Marks,English Marks,History Marks,Fee Paid,Department,Program
+Joseph Clark,MALE,5,5,9,N,MBA,UG
+Stuart Gross,MALE,5,8,5,Y,Mechanical,UG
+Clint West,MALE,3,3,5,N,Biotech,UG
+Gustavo Hudson,MALE,7,4,4,N,Computer Science,PG
+Kelly Hubert ,MALE,7,3,3,Y,MBA,UG
+Taylor Bridges,MALE,3,2,6,N,EEE,UG
+Dixie Figueroa,MALE,9,5,5,Y,Computer Science,PG
+Johnathan Howard,FEMALE,4,6,5,N,Biotech,PG
+Lynette Daniels,FEMALE,8,5,3,N,MBA,UG
+Daisy Ellis,MALE,7,5,3,Y,Civil,UG
+Rhianna Cash,MALE,9,7,5,Y,Civil,UG
+Chiara Davison,FEMALE,4,8,5,Y,MBA,UG
+Marianne Finney,FEMALE,6,1,3,Y,MBA,PG
+Chantal Norton,FEMALE,10,6,4,Y,Biotech,PG
+Zunairah O'Quinn,MALE,3,5,3,Y,MBA,UG
+Alfie-James John,MALE,1,4,4,Y,Biotech,UG
+Ronan Orr,MALE,9,5,4,Y,Chemical,UG
+Roosevelt Morton,MALE,5,9,8,Y,Chemical,UG
+Tyler-James Sherman,MALE,9,7,4,Y,Computer Science,PG
+Rosalind Penn,FEMALE,4,4,6,Y,Civil,PG
+Ethel Barker,FEMALE,2,4,2,Y,EEE,PG
+Dawn Sutherland,FEMALE,4,4,5,Y,MBA,PG
+Jace Savage,FEMALE,6,0,4,Y,Civil,UG
+Fleur Blankenship,MALE,7,4,5,Y,Computer Science,UG
+Martina Huff,MALE,7,2,3,Y,Civil,PG
+Samina Navarro,MALE,5,9,5,Y,Civil,PG
+Savannah Haney,FEMALE,10,8,7,Y,EEE,PG
+Haidar Maxwell,MALE,1,0,5,Y,MBA,UG
+Carlos Dougherty,FEMALE,6,2,1,Y,Chemical,PG
+Lucy Lawrence,FEMALE,10,5,4,Y,Biotech,UG
+Saima Guy,MALE,1,1,1,Y,Civil,UG
+Amayah Brock,MALE,1,4,3,Y,Computer Science,UG
+Sofie Pike,FEMALE,6,2,3,Y,EEE,UG
+Caiden Scott,MALE,1,2,0,Y,EEE,UG
+Mehak Love,MALE,3,6,6,Y,Chemical,UG
+Dorothy James,MALE,9,5,5,Y,Chemical,UG
+Kelsey Montoya,MALE,7,2,4,Y,Civil,PG
+Ellesse Powell,MALE,7,4,5,Y,MBA,UG
+Jibril Shaw,MALE,1,4,4,Y,Civil,UG
+Marianna Boyer,MALE,1,3,5,Y,Chemical,UG
+Hannah Bain,MALE,9,6,8,Y,MBA,PG
+Raiden Cole,MALE,7,2,2,Y,Mechanical,PG
+Nikodem Faulkner,FEMALE,2,3,2,Y,Mechanical,UG
+Felix Jimenez,MALE,5,7,9,Y,Computer Science,PG
+Adrian Rose,FEMALE,8,3,6,Y,Biotech,UG
+Anja Britt,FEMALE,8,3,3,Y,Biotech,UG
+Bianka Huynh,MALE,7,2,4,Y,Mechanical,PG
+Arif Norris,MALE,1,0,1,Y,Computer Science,PG
+Bruno Leigh,MALE,1,5,4,Y,Computer Science,PG
+Ammar Duffy,MALE,3,3,5,Y,Computer Science,PG
+Hermione Bullock,MALE,7,2,1,Y,Civil,UG
+Lisa Parks,MALE,3,5,6,Y,EEE,PG
+Jesse Rees,MALE,3,3,4,Y,MBA,PG
+Annalise Brennan,MALE,1,1,3,Y,MBA,PG
+Josie Short,FEMALE,6,3,2,Y,MBA,PG
+Saim Greaves,FEMALE,8,5,6,Y,EEE,PG
+Lily-Grace Gutierrez,FEMALE,4,5,4,Y,Chemical,UG
+Mahnoor East,FEMALE,2,5,4,Y,Chemical,PG
+Caitlyn Mccallum,FEMALE,4,4,7,Y,Mechanical,PG
+Sama Weaver,MALE,3,4,2,Y,Chemical,PG
+Angel Forster,MALE,3,2,5,Y,Mechanical,UG
+Elsie-May Barajas,MALE,9,6,5,Y,Mechanical,UG
+Juliet Blaese,FEMALE,4,7,6,Y,Computer Science,PG
+Tahmina Ridley,FEMALE,8,2,2,Y,Civil,PG
+Zane Finnegan,FEMALE,10,7,8,Y,Chemical,PG
+Rimsha Dodson,FEMALE,10,4,8,Y,Civil,UG
+Marguerite Christie,FEMALE,4,3,5,Y,Computer Science,UG
+Caoimhe Mccullough,FEMALE,8,6,5,Y,Biotech,UG
+Ameer Hobbs,MALE,3,3,6,Y,Biotech,PG
+Grady Wilkerson,MALE,9,4,4,Y,MBA,UG
+King Gibbons,MALE,5,5,5,Y,Chemical,UG
+Brittney Rennie,MALE,1,5,1,Y,Computer Science,PG
+Sadia Hart,MALE,5,5,8,Y,Mechanical,PG
+Nicolas Villanueva,MALE,1,2,1,Y,Biotech,PG
+Daisy-Mae Heaton,MALE,1,0,0,Y,Computer Science,UG
+Madiha Grant,FEMALE,4,7,5,Y,EEE,UG
+Yasmine Frey,MALE,1,5,1,Y,EEE,PG
+Buddy Merritt,FEMALE,8,4,4,Y,Computer Science,PG
+Clement Barr,MALE,5,4,8,Y,Computer Science,UG
+Alya Acosta,FEMALE,8,4,6,Y,Computer Science,PG
+Ellisha Hamilton,MALE,9,4,5,Y,Chemical,UG
+Darius Maynard,MALE,9,6,6,Y,Chemical,UG
+Jemimah Rowley,FEMALE,10,7,6,Y,MBA,UG
+Haley Small,MALE,9,6,7,Y,Civil,UG
+Darryl Wilkes,MALE,7,2,4,Y,MBA,PG
+Douglas Hail,FEMALE,6,2,2,Y,Computer Science,PG
+Md Dickens,MALE,1,1,3,Y,EEE,PG
+Deen Mccabe,FEMALE,10,5,6,Y,EEE,PG
+Rico Hopkins,FEMALE,6,4,3,Y,Chemical,PG
+Lowri Fields,MALE,5,9,9,Y,Mechanical,PG
+Calvin Talley,FEMALE,6,1,4,Y,Mechanical,PG
+Eileen Lake,MALE,3,2,2,Y,EEE,PG
+Joann Chase,FEMALE,8,3,7,Y,Civil,PG
+Doris Boyle,MALE,7,2,4,Y,EEE,PG
+Safiyah Rivas,MALE,5,9,9,Y,Chemical,UG
+Sila Cobb,FEMALE,2,2,3,Y,Civil,PG
+Shea Nicholson,FEMALE,2,1,3,Y,MBA,PG
+Kayne Martinez,FEMALE,10,5,9,Y,Civil,UG
+Ishaaq Ware,MALE,1,2,2,Y,Biotech,PG
+Jan Rojas,MALE,1,0,4,Y,Computer Science,PG
+Yasin Terrell,MALE,7,4,6,Y,Mechanical,UG
+Freja Harrison,MALE,1,0,2,Y,Civil,UG
+Ajay Melia,MALE,1,1,3,Y,Computer Science,PG
+Maira Doherty,FEMALE,10,6,5,Y,Civil,UG
+Sarah-Jane Gates,FEMALE,6,4,5,Y,Chemical,PG
+Rojin Alexander,FEMALE,4,7,3,Y,Mechanical,PG
+Davey Gilliam,FEMALE,10,6,7,Y,Chemical,PG
+Eleni Glass,FEMALE,2,3,4,Y,MBA,UG
+Talhah Howard,MALE,3,6,3,Y,EEE,PG
+Sandra Ray,FEMALE,10,9,5,Y,MBA,UG

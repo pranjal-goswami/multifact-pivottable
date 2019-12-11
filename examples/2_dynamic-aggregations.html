@@ -1,0 +1,150 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="fragment" content="!">
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="keywords" content="Pranjal Goswami, Pranjal, Goswami, Blog, journal, BADesigns, design, sitar, music, web development, programming, programmer" />
+        <!-- external libs from cdnjs -->
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/4.1.2/papaparse.min.js"></script>
+        <!-- PivotTable.js libs from cdnjs -->
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pivottable/2.7.0/pivot.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/pivottable/2.7.0/pivot.min.css">
+        <!-- for examples only! script to show code to user -->
+        <script type="text/javascript" src="js/show_code.js"></script>
+        <script type="text/javascript" src="../multifact-pivottable.js"></script>
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-35311830-1"></script>
+        <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-35311830-1');
+        </script>
+        <title>Multifact-PivotTable</title>
+        <!--<link href="https://fonts.googleapis.com/css?family=Merriweather:300,400" rel="stylesheet">-->
+        <link href="https://fonts.googleapis.com/css?family=Noto+Serif" rel="stylesheet">
+        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+        <link href="css/styles.css" rel="stylesheet">
+        
+    </head>
+    <body>
+    <script>
+    var aggMap = {
+        'agg1': {
+            aggType: 'Count',
+            arguments: ['English Marks'],
+            name: 'Count of English Marks',
+            varName :'a',
+            renderEnhancement : 'heatmap'
+        },
+
+        'agg2': {
+            aggType: 'Average',
+            arguments: ['History Marks'],
+            name: 'Avg(History)',
+            varName :'b',
+            hidden : true,
+            renderEnhancement : 'barchart'
+        },
+        'agg3': {
+            aggType: 'Sum',
+            arguments: ['Maths Marks'],
+            name: 'Sum(Maths)',
+            varName :'c',
+            hidden : false,
+            renderEnhancement : 'heatmap'
+        }
+    };
+
+    var derivedAggregations = [
+        {
+            name : 'Avg GPA',
+            description : 'sum Maths marks / avg Math marks',
+            expression : 'variables.b*100/variables.c',
+            renderEnhancement : 'barchart',
+            barchartColor : '#fa983a',
+            formatterOptions : {
+                digitsAfterDecimal: 1,
+                scaler: 1,
+                suffix: "%"
+            }
+        },
+        {
+            name : 'Success Score',
+            description : 'Count of English Marks / Avg. of Maths Marks',
+            expression : 'variables.a/variables.b',
+            renderEnhancement : 'heatmap'
+        }
+    ];
+
+    var customAggs = {};
+    customAggs['Multifact Aggregators'] = $.pivotUtilities.multifactAggregatorGenerator(aggMap,derivedAggregations);
+
+    var config = {
+        "cols": ["Gender" ],
+        "rows": ["Department"],
+        "vals": [],
+        "rowOrder": "key_a_to_z",
+        "colOrder": "key_a_to_z",
+        "aggregatorName": "Multifact Aggregators",
+        "rendererName": "GT Table Heatmap and Barchart",
+        "rendererOptions" : {
+
+            aggregations : {
+                defaultAggregations : aggMap,
+                derivedAggregations : derivedAggregations
+
+            },
+            
+        }
+    };
+
+     Papa.parse('data/medium-data.csv', {
+        download: true,
+        skipEmptyLines: true,
+        complete: function (parsed) {
+
+            renderPivot(parsed.data);
+        }
+    });
+
+
+     $.pivotUtilities.customAggs = customAggs;
+
+    config.aggregators = $.extend($.pivotUtilities.aggregators, $.pivotUtilities.customAggs);
+
+    config.renderers = $.extend($.pivotUtilities.renderers, $.pivotUtilities.gtRenderers);
+
+    var renderPivot = function (data) {
+
+        $("#output").pivotUI(
+            data,
+            config
+        );
+    }
+        
+        </script>
+        <div class="container">
+            <div>
+                <main>
+                    <a href="./">Back to Examples</a>
+                <h1>Using Dynamic Aggregations / Derived Aggregations</h1>
+                <hr />
+                    </main>
+                
+                <div id="output" style="margin: 30px;"></div>
+                
+                <main>
+                <hr />
+
+                <p>
+                    <small>Made with <span class="fa fa-heart" style="color:red"></span> by <a href="http://pranjalgoswami.in">pranjalgoswami</a></small>
+                </p>
+            </main>
+            </div>
+        </div>
+    </body>
+</html>

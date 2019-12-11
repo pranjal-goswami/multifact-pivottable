@@ -1,0 +1,65 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="fragment" content="!">
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="keywords" content="Pranjal Goswami, Pranjal, Goswami, Blog, journal, BADesigns, design, sitar, music, web development, programming, programmer" />
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-35311830-1"></script>
+        <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-35311830-1');
+        </script>
+        <title>Multifact-PivotTable</title>
+        <!--<link href="https://fonts.googleapis.com/css?family=Merriweather:300,400" rel="stylesheet">-->
+        <link href="https://fonts.googleapis.com/css?family=Noto+Serif" rel="stylesheet">
+        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+        <link href="css/styles.css" rel="stylesheet">
+        
+    </head>
+    <body>
+        <div class="container">
+            <main>
+                <h2>Multifact-PivotTable.js</h2>
+                <p>
+                    A JavaScript plugin for <a href="https://pivottable.js.org/examples/" target="_blank">PivotTable.js</a>. It renders multiple aggregations simultaneously along with dynamic aggregations based on expressions
+                </p>
+                <br>
+                <div class="img-container">
+                    <img class="img-responsive" src="images/multifact-pivottable-2-min.png" alt="" />
+                    <small>A pivot table made using multifact-pivottable plugin</small>
+                </div>
+                <br>
+                <h4>Features</h4>
+                <ul>
+                    <li>Add multiple aggregations to the same pivottable : AVG(Column A), SUM(Column B)</li>
+                    <li>Add derived aggregations :
+                        <p class="small">
+                            a = AVG(Column A)<br>
+                            b = SUM(Column B)<br>
+                            [c = b/a] as 'Success Score'
+                        </p></li>
+                        <li>Hide an aggregate (in case you want to use the value in derived aggregate but not show it)</li>
+                        <li>Hide an aggregate from row-totals section</li>
+                        <li>Enhance rendering of aggregations using heatmap or barchart</li>
+                        <li>Custom heatmap colors for each aggregation</li>
+                    </ul>
+                    <br>
+                    <h4>Examples</h4>
+                    <ul>
+                        <li><a href="1_multiple-aggregations.html"> Multiple Aggregations</a></li>
+                        <li><a href="2_dynamic-aggregations.html"> Using Derived Aggregations</a></li>
+                        <li><a href="3_hover-tooltip.html"> Using tooltip on hover</a></li>
+                        <li>Minimal theme for pivottable (Coming soon)</li>
+                    </ul>
+                    
+                    <hr />
+                    <p>
+                        <small>Made with <span class="fa fa-heart" style="color:red"></span> by <a href="http://pranjalgoswami.in">pranjalgoswami</a></small>
+                    </p>
+                </div>
+            </body>
+        </html>
