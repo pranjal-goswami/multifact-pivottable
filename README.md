@@ -14,11 +14,7 @@ You can see the live demo at [examples page](http://pranjal-goswami.in/multifact
 
 ## How can I get started?
 
-To know how to load and use this library, please refer to [Getting Started Wiki Page](https://github.com/pranjal-goswami/multifact-pivottable/wiki/Getting-Started)
-
-## API Documentation?
-
-Please refer to [Wiki Pages](https://github.com/pranjal-goswami/multifact-pivottable/wiki)
+Right now I have not spent enough time to document the API, meanwhile, you can follow one of the example pages
 
 
 ## I have a question, how can I get in touch?
