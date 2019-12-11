@@ -28,9 +28,39 @@
         <link href="https://fonts.googleapis.com/css?family=Noto+Serif" rel="stylesheet">
         <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
         <link href="css/styles.css" rel="stylesheet">
+         <style>
+            body{
+                position: relative;
+            }
+            .tooltip{
+                color:#fff;
+                background:#666;
+                border-radius:5px;
+                width: 180px;
+                height: 100px;
+                display: none;
+                position: absolute;
+                padding:10px;
+                z-index:2;
+                opacity:0.8;
+                display: block;
+            }
+
+            .tooltip.visible{
+                display: block;
+            }
+
+            th.highlighted, td.highlighted {
+                /* background:#e0e0e0 !important; */
+                /* border: 1px solid red !important; */
+
+
+            }
+        </style>
         
     </head>
     <body>
+
     <script>
     var aggMap = {
         'agg1': {
@@ -83,6 +113,8 @@
     var customAggs = {};
     customAggs['Multifact Aggregators'] = $.pivotUtilities.multifactAggregatorGenerator(aggMap,derivedAggregations);
 
+    var tooltipElem = $('#tooltip1');
+
     var config = {
         "cols": ["Gender" ],
         "rows": ["Department"],
@@ -108,22 +140,23 @@
 
                 },
                 mouseEnterCallback : function(e, value, filters, pivotData){
-                    tooltipElem.css({top:e.y, left:e.x})
-                    tooltipElem.addClass('visible')
-                    var elem = $($(e.target)[0]);
-                    var row, col, statIndex;
-                    row = elem.data('row');
-                    col = elem.data('col');
-                    statIndex = elem.data('stat-index')
-                    $('.row'+row).addClass('highlighted')
-                    $('.col'+col+'.stat'+statIndex).addClass('highlighted')
+                    console.log(e)
+                    Object.keys(e).forEach(function(key){
+                        console.log(key)
+                        if(key.indexOf('X') >=0 || key.indexOf('x') >=0 || key.indexOf('y') >=0 || key.indexOf('Y') >=0 ){
+                            console.log(key, e[key]);
+                        }
 
+
+                    })
+                    $('#tooltip1').css({top:e.layerY+50, left:e.layerX+50})
+                    $('#tooltip1').addClass('visible')
+                    
                 },
                 mouseLeaveCallback : function(e, value, filters, pivotData){
-                    console.log(e, value, filters)
-                    tooltipElem.removeClass('visible');
-                    $('.pvtVal').removeClass('highlighted')
-                    console.log('Destroy tooltip');
+
+                    $('#tooltip1').removeClass('visible');
+                    
 
 
                 },
@@ -159,7 +192,12 @@
     }
         
         </script>
-        <div class="container">
+
+        <div id="tooltip1" class="tooltip">
+        Details about the Cell
+    </div>
+        <div class="container" style="position:relative">
+
             <div>
                 <main>
                     <a href="./">Back to Examples</a>
