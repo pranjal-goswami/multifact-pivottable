@@ -1,0 +1,23 @@
+{
+  "name": "multifact-pivottable",
+  "main": "multifact-pivottable.js",
+  "homepage": "https://github.com/pranjal-goswami/multifact-pivottable",
+  "version":"1.0.1",
+  "authors": [
+    "pranjal <pranjal.b.goswami@gmail.com>"
+  ],
+  "description": "A plugin for pivottable.js for supporting aggregations on multiple fields",
+  "keywords": [
+    "pivottablejs",
+    "pivot",
+    "pivottable"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

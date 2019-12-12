@@ -1,7 +1,20 @@
 // Custom Aggregators
 
 (function () {
-    var callWithJQuery;
+    var callWithJQuery,
+        indexOf = [].indexOf || function (item) {
+            for (var i = 0, l = this.length; i < l; i++) {
+                if (i in this && this[i] === item) return i;
+            }
+            return -1;
+        },
+        slice = [].slice,
+        bind = function (fn, me) {
+            return function () {
+                return fn.apply(me, arguments);
+            };
+        },
+        hasProp = {}.hasOwnProperty;;
 
     callWithJQuery = function (pivotModule) {
         if (typeof exports === "object" && typeof module === "object") {
@@ -191,39 +204,7 @@
 
         $.pivotUtilities.multifactAggregatorGenerator = multifactAggregator;
 
-    });
 
-}).call(this);
-
-// Custom Barchart
-
-(function () {
-    var callWithJQuery,
-        indexOf = [].indexOf || function (item) {
-            for (var i = 0, l = this.length; i < l; i++) {
-                if (i in this && this[i] === item) return i;
-            }
-            return -1;
-        },
-        slice = [].slice,
-        bind = function (fn, me) {
-            return function () {
-                return fn.apply(me, arguments);
-            };
-        },
-        hasProp = {}.hasOwnProperty;
-
-    callWithJQuery = function (pivotModule) {
-        if (typeof exports === "object" && typeof module === "object") {
-            return pivotModule(require("jquery"));
-        } else if (typeof define === "function" && define.amd) {
-            return define(["jquery"], pivotModule);
-        } else {
-            return pivotModule(jQuery);
-        }
-    };
-
-    callWithJQuery(function ($) {
         $.fn.gtBarchart = function(opts) {
             var barcharter, i, l, numCols, numRows, ref;
             numRows = this.data("numrows");
@@ -347,39 +328,7 @@
             //barcharter(".pvtTotal.colTotal");
             return this;
         };
-    });
 
-}).call(this);
-
-// Custom Heatmap
-
-(function () {
-    var callWithJQuery,
-        indexOf = [].indexOf || function (item) {
-            for (var i = 0, l = this.length; i < l; i++) {
-                if (i in this && this[i] === item) return i;
-            }
-            return -1;
-        },
-        slice = [].slice,
-        bind = function (fn, me) {
-            return function () {
-                return fn.apply(me, arguments);
-            };
-        },
-        hasProp = {}.hasOwnProperty;
-
-    callWithJQuery = function (pivotModule) {
-        if (typeof exports === "object" && typeof module === "object") {
-            return pivotModule(require("jquery"));
-        } else if (typeof define === "function" && define.amd) {
-            return define(["jquery"], pivotModule);
-        } else {
-            return pivotModule(jQuery);
-        }
-    };
-
-    callWithJQuery(function ($) {
         $.fn.gtHeatmap = function (scope, opts) {
             var colorScaleGenerator, heatmapper, i, x, j, l, n, numCols, numRows, ref, ref1, ref2, _finalAggregatorsNameMap, _finalDerivedAggregatorsNameMap;
             if (scope == null) {
@@ -481,37 +430,6 @@
             return this;
         };
     });
-
-}).call(this);
-
-// Custom Renderer
-
-(function () {
-    var callWithJQuery,
-        indexOf = [].indexOf || function (item) {
-            for (var i = 0, l = this.length; i < l; i++) {
-                if (i in this && this[i] === item) return i;
-            }
-            return -1;
-        },
-        slice = [].slice,
-        bind = function (fn, me) {
-            return function () {
-                return fn.apply(me, arguments);
-            };
-        },
-        hasProp = {}.hasOwnProperty;
-    ;
-
-    callWithJQuery = function (pivotModule) {
-        if (typeof exports === "object" && typeof module === "object") {
-            return pivotModule(require("jquery"));
-        } else if (typeof define === "function" && define.amd) {
-            return define(["jquery"], pivotModule);
-        } else {
-            return pivotModule(jQuery);
-        }
-    };
 
     var pivotTableRenderer = function (pivotData, opts) {
         var aggregator, c, colAttrs, colKey, colKeys, defaults, getClickHandler, getMouseEnterHandler, getMouseLeaveHandler, getMouseMoveHandler, i, j, r, result,
@@ -1205,8 +1123,7 @@
         return result;
     };
 
-    callWithJQuery(function ($) {
-        return $.pivotUtilities.gtRenderers = {
+     $.pivotUtilities.gtRenderers = {
             "GT Table": function (pivotData, opts) {
                 return pivotTableRenderer(pivotData, opts)
             },
@@ -1223,7 +1140,7 @@
                 return $(pivotTableRenderer(pivotData, opts)).gtHeatmap("colheatmap", opts);
             }
         };
-    });
+
 
 }).call(this);
 
