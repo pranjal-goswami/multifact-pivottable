@@ -33,7 +33,7 @@
 
             var allAggregators = $.map(aggMap, function (aggregation, key) {
                 var agg = $.pivotUtilities.aggregators[aggregation.aggType];
-                console.log({a:agg})
+//                console.log({a:agg})
                 var _numInputs = agg([])().numInputs || 0;
                 return {
                     aggregator: agg,
@@ -391,7 +391,7 @@
                         valueSets[valueAttributeKey].push(x);
                         return values.push(x);
                     });
-                    console.log(valueSets);
+//                    console.log(valueSets);
 
                     colorScaleSets = {};
                     Object.keys(valueSets).forEach(function(key){
@@ -456,11 +456,11 @@
         rowKeys = pivotData.getRowKeys();
         colKeys = pivotData.getColKeys();
 
-        console.log('colAttrs', colAttrs);
-        console.log('rowAttrs', rowAttrs);
-        console.log('rowKeys', rowKeys);
-        console.log('colKeys', colKeys);
-        console.log('pivotData', pivotData);
+        // console.log('colAttrs', colAttrs);
+        // console.log('rowAttrs', rowAttrs);
+        // console.log('rowKeys', rowKeys);
+        // console.log('colKeys', colKeys);
+        // console.log('pivotData', pivotData);
 
         var aggregationMap = {};
         if(opts.table.aggregationConfig){
@@ -483,7 +483,7 @@
                 valueAttrs.push(key);
             }
         });
-        console.log(valueAttrs);
+//        console.log(valueAttrs);
 
         var enableDebug = !!window.enablePivotDebug;
 
@@ -677,6 +677,7 @@
                 th = document.createElement("th");
                 th.setAttribute("colspan", rowAttrs.length);
                 th.setAttribute("rowspan", colAttrs.length);
+                th.className = "pvtBlank";
                 tr.appendChild(th);
             }
             th = document.createElement("th");
@@ -710,7 +711,10 @@
                 th.className = "pvtTotalLabel pvtRowTotalLabel";
                 th.setAttribute("colspan", valueAttrs.length);
                 th.innerHTML = opts.localeStrings.totals;
+            } else {
+                th.className = "pvtBlank";
             }
+
             tr.appendChild(th);
             thead.appendChild(tr);
         }
@@ -738,6 +742,7 @@
         th.textContent = '';
         //Add 1 to end if there are no cols
         th.setAttribute("colspan", rowAttrs.length+(colKeys.length > 0 ? 1:0));
+        th.className = "pvtMeasureBlank";
         //th.setAttribute("rowspan", colAttrs.length);
         tr.appendChild(th);
 
@@ -752,6 +757,7 @@
                     var idx = 0;
                     for (var _key in valueAttrs) {
                         th = document.createElement("th");
+                        th.className = "pvtMeasureLabel";
                         th.textContent = valueAttrs[idx++];
                         tr.appendChild(th);
                     }
@@ -770,6 +776,7 @@
                         continue;
                     }
                     th = document.createElement("th");
+                    th.className = "pvtMeasureLabel pvtMeasureTotalLabel";
                     th.textContent = valAttr;
                     tr.appendChild(th);
 
