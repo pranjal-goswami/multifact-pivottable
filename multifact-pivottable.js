@@ -1,4 +1,5 @@
 // Custom Aggregators
+window.$ = window.jQuery = require('jquery');
 
 (function () {
     var callWithJQuery,
