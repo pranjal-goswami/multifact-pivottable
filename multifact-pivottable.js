@@ -640,7 +640,7 @@
 
                 th.setAttribute("colspan", valueAttrs.length-numHiddenMeasures);
                 //Added 1 for value headers
-                th.setAttribute("rowspan", 2 + colAttrs.length + (rowAttrs.length === 0 ? 0 : 1));
+                th.setAttribute("rowspan", colAttrs.length + (rowAttrs.length === 0 ? 0 : 1));
                 tr.appendChild(th);
             }
         }
