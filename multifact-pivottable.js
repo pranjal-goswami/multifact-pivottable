@@ -844,7 +844,7 @@
                         }
 
                         if (getMouseMoveHandler != null) {
-                            td.onmouseleave = getMouseMoveHandler(val, rowKey, colKey);
+                            td.onmousemove = getMouseMoveHandler(val, rowKey, colKey);
 
                         }
                         tr.appendChild(td);
