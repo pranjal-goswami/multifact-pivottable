@@ -1,4 +1,4 @@
-| ## Not actively maintained
+> ## Not actively maintained
 
 # Mulitple Aggregations for PivotTable.js
 
