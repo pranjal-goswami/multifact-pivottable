@@ -1,0 +1,32 @@
+{
+  "name": "multifact-pivottable",
+  "version": "1.0.0",
+  "description": "> ## Not actively maintained",
+  "main": "multifact-pivottable.js",
+  "directories": {
+    "example": "examples"
+  },
+  "scripts": {
+    "test": "jest"
+  },
+  "jest": {
+    "moduleNameMapper": {
+      "^jquery$": "<rootDir>/__mocks__/jquery.js"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pranjal-goswami/multifact-pivottable.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/pranjal-goswami/multifact-pivottable/issues"
+  },
+  "homepage": "https://github.com/pranjal-goswami/multifact-pivottable#readme",
+  "devDependencies": {
+    "jest": "^30.3.0"
+  }
+}

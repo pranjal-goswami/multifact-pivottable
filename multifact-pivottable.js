@@ -41,7 +41,8 @@
                     name: aggregation.name,
                     key: key,
                     varName: aggregation.varName,
-                    hidden: aggregation.hidden
+                    hidden: aggregation.hidden,
+                    formatter: aggregation.formatter || null
                 }
             });
 
@@ -57,7 +58,8 @@
                         key: _agg.key,
                         name: _agg.name,
                         varName: _agg.varName,
-                        hidden: _agg.hidden
+                        hidden: _agg.hidden,
+                        formatter: _agg.formatter
                     };
 
                 })
@@ -72,7 +74,8 @@
                             key: _agg.key,
                             name: _agg.name,
                             varName: _agg.varName,
-                            hidden: _agg.hidden
+                            hidden: _agg.hidden,
+                            formatter: _agg.formatter
                         };
 
                     });
@@ -179,11 +182,18 @@
                             var formatter = null;
                             //console.log(_finalAggregatorsNameMap,aggKey)
                             if (!!_finalAggregatorsNameMap[aggKey]) {
-                                formatter = _finalAggregatorsNameMap[aggKey].aggregator.format;
+                                if (typeof _finalAggregatorsNameMap[aggKey].formatter === 'function') {
+                                    formatter = _finalAggregatorsNameMap[aggKey].formatter;
+                                } else {
+                                    formatter = _finalAggregatorsNameMap[aggKey].aggregator.format;
+                                }
                             } else if (!!_finalDerivedAggregatorsNameMap[aggKey]) {
-                                var formatterOptions = $.extend({}, _finalDerivedAggregatorsNameMap[aggKey].formatterOptions);
-
-                                formatter = $.pivotUtilities.numberFormat(formatterOptions);
+                                if (typeof _finalDerivedAggregatorsNameMap[aggKey].formatter === 'function') {
+                                    formatter = _finalDerivedAggregatorsNameMap[aggKey].formatter;
+                                } else {
+                                    var formatterOptions = $.extend({}, _finalDerivedAggregatorsNameMap[aggKey].formatterOptions);
+                                    formatter = $.pivotUtilities.numberFormat(formatterOptions);
+                                }
                             }
 
                             if (!formatter) {
